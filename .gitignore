@@ -1,0 +1,13 @@
+# 开发过程产物（本地预览截图，不入库）
+preview/
+
+# 工具与系统文件
+.dsh-*/
+.DS_Store
+
+# 历史版本：早期「体验设计师 / 智能交互设计工程师」方向，保留在本地
+resume.html
+黄红艺-简历-体验设计师.*
+黄红艺-简历-智能交互设计工程师.*
+build_resume_designer.py
+build_resume_interaction.py

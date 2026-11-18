@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>黄红艺 · 产品经理 · 简历</title>
+<meta name="description" content="黄红艺，产品经理 / 设计者。多年企业级产品经验：华为 Answer 2.0 AI 办公、Answer 1.0 解决方案 AI 助手、锐捷 Source ID、华为 Talent 实训云平台。">
+<meta name="author" content="黄红艺">
+<meta name="color-scheme" content="light">
+<style>
+  :root{
+    --ink:#2e2e2e;
+    --body:#4d4d4d;
+    --muted:#999999;
+    --line:#dbdbdb;
+    --paper:#ffffff;
+    --desk:#ececec;
+
+    --serif:"Didot","Songti SC","STSong","Source Han Serif SC","Noto Serif SC","SimSun",serif;
+    --sans:"HarmonyOS Sans SC","PingFang SC","Hiragino Sans GB","Microsoft YaHei",-apple-system,system-ui,sans-serif;
+  }
+
+  *{box-sizing:border-box;}
+  html{-webkit-text-size-adjust:100%;}
+  body{
+    margin:0;background:var(--desk);color:var(--body);
+    font-family:var(--sans);font-size:8.7pt;line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,p,dl,dd{margin:0;}
+  ul{margin:0;padding:0;list-style:none;}
+  a{color:inherit;text-decoration:none;}
+  ::selection{background:#e2e2e2;color:#111;}
+
+  /* ================= 工具条（不参与打印） ================= */
+  .bar{
+    position:sticky;top:0;z-index:9;
+    display:flex;align-items:center;justify-content:space-between;gap:16px;
+    padding:10px 22px;
+    background:rgba(255,255,255,.86);backdrop-filter:blur(10px);
+    border-bottom:1px solid rgba(0,0,0,.07);
+    font-size:11.5px;color:var(--muted);letter-spacing:.02em;
+  }
+  .bar__id{display:flex;align-items:center;gap:9px;}
+  .bar__id b{color:var(--ink);font-weight:500;font-size:12.5px;}
+  .bar__id i{width:3px;height:3px;border-radius:50%;background:#c9c9c9;}
+  .bar__acts{display:flex;align-items:center;gap:10px;}
+  .btn{
+    appearance:none;cursor:pointer;font:inherit;font-size:11.5px;
+    padding:6px 13px;border-radius:4px;border:1px solid #2e2e2e;
+    background:#2e2e2e;color:#fff;transition:opacity .15s ease;
+  }
+  .btn:hover{opacity:.85;}
+
+  /* ================= 纸张 ================= */
+  .doc{display:flex;flex-direction:column;align-items:center;gap:26px;padding:26px 16px 70px;}
+  .sheet{
+    position:relative;
+    width:210mm;height:297mm;
+    padding:11.15mm 15mm 10.5mm;
+    background:var(--paper);
+    box-shadow:0 1px 3px rgba(0,0,0,.06),0 16px 40px rgba(0,0,0,.10);
+    overflow:hidden;
+  }
+  .sheet + .sheet{margin-top:0;}
+
+  /* ================= 页眉 ================= */
+  .head{
+    display:flex;align-items:flex-start;justify-content:space-between;gap:8mm;
+    padding-bottom:3mm;border-bottom:.35pt solid var(--line);
+  }
+  .nameRow{display:flex;align-items:center;gap:2.6mm;}
+  .logo{height:8.2mm;width:auto;display:block;}
+  .name{
+    font-family:var(--serif);font-weight:400;font-size:21pt;line-height:1;
+    color:var(--ink);letter-spacing:.02em;
+  }
+  .role{margin-top:2.2mm;font-size:9.2pt;letter-spacing:.01em;}
+  .contact{
+    text-align:right;font-size:7.8pt;line-height:1.55;color:var(--muted);
+    letter-spacing:.01em;white-space:nowrap;
+  }
+  .contact a{border-bottom:.4pt solid transparent;transition:border-color .2s ease;}
+  .contact a:hover{border-bottom-color:var(--line);}
+
+  /* ================= 简介 ================= */
+  .intro{margin-top:6mm;line-height:1.6;}
+  .intro--main{margin-top:2.4mm;font-size:9.5pt;color:var(--ink);line-height:1.6;}
+
+  /* ================= 章节 ================= */
+  .sec{margin-top:6.4mm;}
+  .sec__head{
+    display:flex;align-items:baseline;gap:2.6mm;
+    padding-bottom:1.3mm;border-bottom:.35pt solid var(--line);
+  }
+  .sec__num{font-size:7.2pt;color:var(--muted);letter-spacing:.13em;}
+  .sec__title{
+    font-family:var(--serif);font-weight:400;font-size:12pt;
+    color:var(--ink);letter-spacing:.05em;
+  }
+
+  /* 能力维度 */
+  .dims{margin-top:2mm;display:grid;grid-template-columns:24mm 1fr;row-gap:1.6mm;}
+  .dims dt{font-size:7.4pt;color:var(--muted);letter-spacing:.07em;padding-top:.4mm;}
+  .dims dd{font-size:8.7pt;}
+  .em{color:var(--ink);}
+
+  /* 工作经历 */
+  .job{margin-top:3mm;}
+  .job__head{display:flex;align-items:baseline;gap:2.2mm;}
+  .job__co{font-family:var(--serif);font-weight:400;font-size:10.5pt;color:var(--ink);}
+  .job__role{font-size:8.6pt;color:var(--muted);}
+  .job__date{margin-left:auto;font-size:7.8pt;color:var(--muted);letter-spacing:.05em;}
+  .job__list{margin-top:1.1mm;}
+  .job__list li{position:relative;padding-left:3.6mm;}
+  .job__list li + li{margin-top:.7mm;}
+  .job__list li::before{content:"–";position:absolute;left:0;top:0;color:var(--muted);}
+
+  /* 代表项目 */
+  .proj{margin-top:3.4mm;}
+  .proj__head{display:flex;align-items:baseline;gap:2.2mm;}
+  .proj__idx{font-size:7.2pt;color:var(--muted);letter-spacing:.1em;}
+  .proj__name{font-family:var(--serif);font-weight:400;font-size:10.4pt;color:var(--ink);}
+  .proj__meta{font-size:7.8pt;color:var(--muted);letter-spacing:.03em;}
+  .proj__date{margin-left:auto;font-size:7.8pt;color:var(--muted);letter-spacing:.05em;}
+  .proj__rows{margin-top:1.2mm;display:grid;grid-template-columns:11.5mm 1fr;row-gap:1.1mm;}
+  .proj__rows dt{font-size:7.4pt;color:var(--muted);letter-spacing:.07em;padding-top:.4mm;}
+  .proj__rows dd{font-size:8.7pt;}
+
+  /* 教育 / 技能 */
+  .edu{margin-top:2mm;}
+  .edu__row{display:flex;align-items:baseline;gap:3mm;padding:1.4mm 0;}
+  .edu__school{font-family:var(--serif);font-weight:400;font-size:9.4pt;color:var(--ink);}
+  .edu__degree{font-size:8.6pt;color:var(--muted);}
+
+  .skills{margin-top:2mm;display:grid;grid-template-columns:18.5mm 1fr;row-gap:1.5mm;}
+  .skills dt{font-size:7.4pt;color:var(--muted);letter-spacing:.07em;padding-top:.4mm;}
+  .skills dd{font-size:8.7pt;}
+
+  .note{margin-top:2.2mm;font-size:8.2pt;color:var(--muted);line-height:1.55;}
+
+  /* ================= 屏幕缩放 ================= */
+  @media screen and (max-width:920px){
+    .doc{padding:16px 8px 52px;gap:18px;}
+    .sheet{zoom:.78;}
+  }
+  @media screen and (max-width:760px){
+    .sheet{zoom:.62;}
+    .bar__id span{display:none;}
+  }
+  @media screen and (max-width:560px){
+    .sheet{zoom:.46;}
+    .bar{padding:8px 12px;}
+    .bar__id{display:none;}
+  }
+
+  /* ================= 打印 ================= */
+  @page{size:A4;margin:0;}
+  @media print{
+    html,body{background:#fff;}
+    .bar{display:none !important;}
+    .doc{display:block;padding:0;gap:0;}
+    .sheet{
+      width:210mm;height:297mm;margin:0;
+      box-shadow:none;break-after:page;page-break-after:always;
+    }
+    .sheet:last-child{break-after:auto;page-break-after:auto;}
+    a{color:inherit !important;text-decoration:none !important;border-bottom:0 !important;}
+    *{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  }
+</style>
+</head>
+<body>
+
+<div class="bar">
+  <div class="bar__id"><b>黄红艺</b><i></i><span>产品经理</span><i></i><span>A4 · 2 页</span></div>
+  <div class="bar__acts">
+    <button class="btn" type="button" onclick="window.print()">打印 / 存为 PDF</button>
+  </div>
+</div>
+
+<main class="doc">
+
+  <!-- ==================== 第 1 页 ==================== -->
+  <article class="sheet" aria-label="简历第 1 页">
+
+    <header class="head">
+      <div class="head__id">
+        <div class="nameRow">
+          <img class="logo" src="data:image/png;base64,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" alt="">
+          <h1 class="name">黄红艺</h1>
+        </div>
+        <p class="role">产品经理 · AI 应用 / Agent / B 端平台</p>
+      </div>
+      <div class="contact">
+        <p><a href="tel:+8615158893193">151 5889 3193</a> · <a href="mailto:942852369@qq.com">942852369@qq.com</a></p>
+        <p><a href="https://github.com/HuangDesign/" target="_blank" rel="noopener">GitHub　github.com/HuangDesign</a></p>
+        <p>公众号 uxd-si · 上海</p>
+      </div>
+    </header>
+
+    <p class="intro">多年企业级产品经验，深耕 IoT、协同办公、数据处理等业务的数智化发展领域。</p>
+    <p class="intro intro--main">近三年专注于 AI Agent 及数据本体构建，以透明可信、反馈进化、情境适配、责任可溯为产品理念，构建「1+1&gt;2」的协作关系——让 AI 延伸人的能力，而非替代人。</p>
+
+    <!-- 01 -->
+    <section class="sec">
+      <h2 class="sec__head"><span class="sec__num">01</span><span class="sec__title">能力维度</span></h2>
+      <dl class="dims">
+        <dt>业务判断</dt>
+        <dd>先判断值不值得做，再谈怎么做——用目标、成本、可验证性筛选项。方案产出 <span class="em">3 天 → 3 分钟</span>。</dd>
+        <dt>用户洞察</dt>
+        <dd>去现场看人怎么干活，而不是只看需求文档。试点 <span class="em">12 位售前，10 位持续使用</span>。</dd>
+        <dt>结构与交互</dt>
+        <dd>角色、权限、数据流、本体先咬合清楚，页面才会收敛。<span class="em">45 个组件规范</span>，入口 <span class="em">3 → 1</span>。</dd>
+        <dt>AI 与 Agent</dt>
+        <dd>定义机器跑到哪一步必须停下等人确认，状态与回溯写进产品。覆盖 <span class="em">近 1000 人</span>，满意度 <span class="em">4.2</span>。</dd>
+        <dt>数据与度量</dt>
+        <dd>用行为数据、可用性测试与反馈闭环定位问题，把改动和结果对上账。满意度 <span class="em">78% → 89%</span>。</dd>
+        <dt>推动与交付</dt>
+        <dd>与算法、合规、研发对齐边界与排期，在灰度里迭代。<span class="em">7 所院校</span>部署，项目获公司优胜奖。</dd>
+      </dl>
+    </section>
+
+    <!-- 02 -->
+    <section class="sec">
+      <h2 class="sec__head"><span class="sec__num">02</span><span class="sec__title">工作经历</span></h2>
+
+      <article class="job">
+        <div class="job__head">
+          <h3 class="job__co">锐捷网络</h3>
+          <p class="job__role">产品设计师（数据与 Agent 平台）</p>
+          <p class="job__date">2026.04 — 2026.10</p>
+        </div>
+        <ul class="job__list">
+          <li>负责 Source ID 平台<span class="em">本体、数据管道、数据管理</span>三大模块的体验设计，并参与 Agent 任务链路与设计规范建设。</li>
+          <li>把「数据接入—加工—建模—管理」收成一条统一路径，同时定义 Agent 过程状态、异常反馈与人工介入节点。</li>
+          <li>用 Lovable 快速产出可交互原型验证方案，把任务流程、状态表达与反馈机制沉淀成团队原则。</li>
+        </ul>
+      </article>
+
+      <article class="job">
+        <div class="job__head">
+          <h3 class="job__co">华为</h3>
+          <p class="job__role">体验设计师 · AI 助手项目产品经理</p>
+          <p class="job__date">2022.04 — 2026.04</p>
+        </div>
+        <ul class="job__list">
+          <li>主导「解决方案 AI 助手」：组建团队、定产品定位与排期，完成从需求定义、Agent 工作流到灰度落地的全流程。</li>
+          <li>负责 Talent 实训云平台的规划与落地，围绕教务、教学、考评梳理多角色任务与关键流程。</li>
+        </ul>
+      </article>
+
+      <article class="job">
+        <div class="job__head">
+          <h3 class="job__co">涂鸦智能</h3>
+          <p class="job__role">产品体验设计师（智慧楼宇 SaaS）</p>
+          <p class="job__date">2021.04 — 2022.04</p>
+        </div>
+        <ul class="job__list">
+          <li>负责 3 条产品线（设计 Owner），主导智慧楼宇实时报警系统重构；报警处理效率 <span class="em">+70%</span>，满意度 <span class="em">3.29 → 4.50</span>。</li>
+        </ul>
+      </article>
+
+      <article class="job">
+        <div class="job__head">
+          <h3 class="job__co">海康威视</h3>
+          <p class="job__role">交互设计工程师</p>
+          <p class="job__date">2017.06 — 2021.04</p>
+        </div>
+        <ul class="job__list">
+          <li>企业级客户端与智能硬件（IoT 产品 20+）的需求分析、信息架构与核心流程设计；iVMS-4200 相关模块页面 <span class="em">-10%</span>。</li>
+          <li>1600K 网络键盘解决 60 余项可用性问题，满意度 <span class="em">78% → 89%</span>；获发明专利 1 项。</li>
+        </ul>
+      </article>
+    </section>
+
+    <!-- 03 -->
+    <section class="sec">
+      <h2 class="sec__head"><span class="sec__num">03</span><span class="sec__title">代表项目</span></h2>
+
+      <article class="proj">
+        <div class="proj__head">
+          <span class="proj__idx">01</span>
+          <h3 class="proj__name">华为 Answer 2.0 AI 办公｜企业级 Agent 工作伙伴</h3>
+          <p class="proj__meta">产品经理 + 体验设计 · 双角色</p>
+        </div>
+        <dl class="proj__rows">
+          <dt>S 背景</dt>
+          <dd>信息散在 WeLink 文档、群聊、知识中心与代码仓库，跨系统办事要反复复制粘贴；知识源有 3 个入口，全量用户中仅约 700 人使用且极易选错。</dd>
+          <dt>T 任务</dt>
+          <dd>以 PD + UXD 双角色负责能力边界、产品骨架、状态化交互与反馈闭环；目标是让用户只记一个入口、敢把任务交出去、失败时知道为什么。</dd>
+          <dt>A 行动</dt>
+          <dd>确立「Chat 是入口、垂域是能力」，子代理封装为工具由主 Agent 调度；知识源三入口收敛为一个下拉，改由 Agent 消解冲突；状态写成枚举——无输出不出现复制/分享，失败不出现点赞；反馈改为两级标签并自动映射跟进人；内审推行「先画理想链路，再推架构」。</dd>
+          <dt>R 结果</dt>
+          <dd>覆盖 <span class="em">近 1000 人</span>，试点团队满意度 <span class="em">4.2</span>；入口 <span class="em">3 → 1</span>；反馈可定位（7.1–7.20 共 85 条，BUG 22 条，按模块分派）；沉淀 Agent 设计体系 <span class="em">45 个组件</span>。</dd>
+        </dl>
+      </article>
+    </section>
+
+  </article>
+
+  <!-- ==================== 第 2 页 ==================== -->
+  <article class="sheet" aria-label="简历第 2 页">
+
+    <article class="proj" style="margin-top:0">
+      <div class="proj__head">
+        <span class="proj__idx">02</span>
+        <h3 class="proj__name">华为 Answer 1.0 AI 助手｜企业级解决方案</h3>
+        <p class="proj__meta">产品经理 · 0 → 1</p>
+        <p class="proj__date">2024.08 — 2024.11</p>
+      </div>
+      <dl class="proj__rows">
+        <dt>S 背景</dt>
+        <dd>解决方案工程师大量重复编写方案，人工产出周期长；客户需求频繁变更，且有强合规、可溯源要求，人工模式稳定性差。</dd>
+        <dt>T 任务</dt>
+        <dd>作为 AI 产品负责人，负责需求定义、Agent 工作流、交互方案到灰度落地的全流程；目标是把产出周期压下来，同时守住合规底线。</dd>
+        <dt>A 行动</dt>
+        <dd>访谈真实用户梳理使用链路，区分适合 AI 生成与必须人工审核的环节；定义 Agent 任务拆解、记忆管理与版本回溯；与算法、合规、研发对齐输出边界并设置校验拦截；输出方案与规范，交付 Vibe Coding 的产品源码；设计灰度方案，按幻觉、准确性、使用门槛迭代交互。</dd>
+        <dt>R 结果</dt>
+        <dd>方案平均产出 <span class="em">3 天 → 3 分钟</span>；试点 <span class="em">12 位售前，10 位持续使用</span>；生成内容全部留痕可审计；项目获公司优胜奖（3 万元），个人获「价值之星」。</dd>
+      </dl>
+    </article>
+
+    <article class="proj">
+      <div class="proj__head">
+        <span class="proj__idx">03</span>
+        <h3 class="proj__name">锐捷 Source ID 3.0｜本体与数据产品</h3>
+        <p class="proj__meta">产品设计师 · 模块体验 / Agent 链路</p>
+        <p class="proj__date">2026.04 — 2026.10</p>
+      </div>
+      <dl class="proj__rows">
+        <dt>S 背景</dt>
+        <dd>产品包含本体、数据管道、数据管理等专业模块，用户需要理解数据与本体之间的关系并完成配置构建，专业门槛高、跨模块任务不连贯。</dd>
+        <dt>T 任务</dt>
+        <dd>负责三个核心模块的体验设计，并参与 Agent 任务链路与设计规范建设；重点是降低专业能力的使用门槛，改善跨模块任务的连贯性。</dd>
+        <dt>A 行动</dt>
+        <dd>梳理数据接入、加工、建模、管理的依赖关系，设计跨模块信息架构与关键操作路径；设计 Agent 任务链路（输入 → 任务理解 → 构建执行 → 结果确认），定义过程状态、异常反馈与人工介入；探索 Agent 辅助与手动操作的协同，避免复杂任务成为黑盒；用 Lovable 做原型探索，沉淀任务流程与状态表达原则。</dd>
+        <dt>R 结果</dt>
+        <dd>形成面向企业级复杂任务的 Agent 体验设计实践，兼顾配置效率、过程透明与人工控制；跨模块路径统一，Agent 过程可见、可回退。</dd>
+      </dl>
+    </article>
+
+    <article class="proj">
+      <div class="proj__head">
+        <span class="proj__idx">04</span>
+        <h3 class="proj__name">华为 Talent 实训云平台</h3>
+        <p class="proj__meta">体验设计师 · 产品线设计 Owner / 设计组长</p>
+        <p class="proj__date">2022.04 — 2026.04</p>
+      </div>
+      <dl class="proj__rows">
+        <dt>S 背景</dt>
+        <dd>教务、教学、考评分散在多套系统，校方 / 教师 / 学生三类角色任务割裂，教师批阅与签到重复劳动多。</dd>
+        <dt>T 任务</dt>
+        <dd>负责平台的体验规划与设计落地，覆盖教务、教学、考评主链路，推动产品结构与关键流程迭代。</dd>
+        <dt>A 行动</dt>
+        <dd>用 KANO 与竞品分析排优先级，先做「教务—考评」闭环；按三类角色重排任务流，把高频操作前移到首屏；结合用户研究、可用性测试与行为数据定位问题，参与组件体系与设计规范建设。</dd>
+        <dt>R 结果</dt>
+        <dd>部署 <span class="em">7 所职业院校</span>；批阅、签到等高频模块使用率 <span class="em">+13%</span>；两次获「明日之星」。</dd>
+      </dl>
+    </article>
+
+    <!-- 04 -->
+    <section class="sec">
+      <h2 class="sec__head"><span class="sec__num">04</span><span class="sec__title">教育经历</span></h2>
+      <div class="edu">
+        <div class="edu__row"><span class="edu__school">浙江工业大学</span><span class="edu__degree">设计学硕士</span></div>
+        <div class="edu__row"><span class="edu__school">河南理工大学</span><span class="edu__degree">工业设计学士</span></div>
+        <div class="edu__row"><span class="edu__school">河南理工大学</span><span class="edu__degree">会计学（双学位）</span></div>
+      </div>
+      <p class="note">设计学出身，本科还读了会计学双学位——既能把东西画清楚，也看得懂数字。</p>
+    </section>
+
+    <!-- 05 -->
+    <section class="sec">
+      <h2 class="sec__head"><span class="sec__num">05</span><span class="sec__title">专业技能</span></h2>
+      <dl class="skills">
+        <dt>业务领域</dt>
+        <dd>企业级 SaaS、ToB 中后台、IoT、本体建模、数据管道与数据治理、多角色权限与审批链路</dd>
+        <dt>AI 与工具</dt>
+        <dd>LLM 应用与 RAG、Agent 任务链路、意图澄清、结果校验；Lovable、Axure、Figma、Principle、C4D / AE</dd>
+        <dt>方法论与输出</dt>
+        <dd>Agent 设计规范 45 个组件、TECS-R 体验度量、六维设计走查；45+ 篇文章、公众号 3000+ 订阅</dd>
+      </dl>
+      <p class="note">文章被「人人都是产品经理」「优设网」「微交互」等平台推荐；六维设计走查体系在多条产品线落地。</p>
+    </section>
+
+  </article>
+
+</main>
+
+</body>
+</html>
