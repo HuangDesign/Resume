@@ -356,16 +356,15 @@
     font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--light-soft);
   }
   .contact__grid{
-    display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);
+    display:grid;grid-template-columns:minmax(0,1.32fr) minmax(0,.68fr);
     gap:clamp(32px,5vw,72px);margin-top:26px;
   }
   .contact h2{
     font-family:var(--serif);font-weight:400;
-    font-size:clamp(1.35rem,2.45vw,1.95rem);line-height:1.42;color:#fff;
-    max-width:100%;
+    font-size:clamp(1.28rem,2.05vw,1.68rem);line-height:1.52;color:#fff;
+    max-width:100%;text-wrap:pretty;
   }
   .contact h2 em{font-style:italic;color:#d9d9d9;}
-  .contact__text{margin-top:16px;font-size:13.5px;line-height:1.85;color:var(--light-soft);max-width:34em;}
   .contact__mail{
     display:inline-block;margin-top:30px;
     font-family:var(--serif);font-size:clamp(1.15rem,2.2vw,1.6rem);
@@ -484,7 +483,7 @@
     .edu__row{gap:2px 10px;}
 
     /* 联系 */
-    .contact h2{font-size:clamp(1.08rem,5.4vw,1.36rem);line-height:1.5;}
+    .contact h2{font-size:clamp(1rem,4.6vw,1.3rem);line-height:1.55;}
     .contact__mail{font-size:clamp(1.02rem,5.4vw,1.4rem);word-break:break-all;}
     .copy-btn{padding:11px 16px;font-size:11.5px;}
     .foot{flex-direction:column;align-items:flex-start;gap:9px;}
@@ -508,7 +507,7 @@
     .section{padding:18pt 0 0;break-inside:avoid;}
     .contact{background:#fff;color:#111;padding:18pt 0;margin-top:18pt;border-top:1px solid #ccc;}
     .contact h2,.contact__mail,.contact__item a,.contact__item p{color:#111;}
-    .contact__icon,.contact__text,.foot{color:#555;}
+    .contact__icon,.foot{color:#555;}
     .foot{border-top-color:#ccc;}
     .js [data-reveal]{opacity:1;transform:none;}
   }
@@ -867,8 +866,7 @@
 
       <div class="contact__grid">
         <div>
-          <h2>如果你正在做 AI 产品，<br class="contact__br">也在纠结 Agent <em>该自动到哪一步</em>，<br class="contact__br">这大概是我最想聊的话题。</h2>
-          <p class="contact__text">简历可以看经历，聊天才能看判断。十分钟，聊聊你们现在卡在哪一步。</p>
+          <h2>如果你正在寻找能真正理解<span class="nw">大模型边界</span>，<br class="contact__br"><span class="nw">并能将</span> <span class="nw">AI 能力</span>深度融入业务，<br class="contact__br">解决复杂场景中的<span class="nw">人机协作难题</span>。<br>这大概是我最能发挥价值、<span class="nw">最想与你深聊的话题</span>。</h2>
           <a class="contact__mail" href="mailto:942852369@qq.com">942852369@qq.com</a>
         </div>
 
