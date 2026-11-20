@@ -81,7 +81,7 @@ def rich(p, text, size, *, color=BODY, strong=INK, serif=False):
         set_font(r, size, serif=serif, bold=False, color=(strong if i % 2 else color))
 
 
-def section(doc, num, title, before=3):
+def section(doc, num, title, before=2):
     p = para(doc, before=before, after=5, line=1.0, keep_next=True)
     n = p.add_run(num + "  ")
     set_font(n, 7.2, color=MUTED, spacing=1.2)
@@ -104,8 +104,8 @@ normal.paragraph_format.space_after = Pt(0)
 sec = doc.sections[0]
 sec.page_width, sec.page_height = Cm(21), Cm(29.7)
 sec.left_margin = sec.right_margin = Cm(1.5)
-sec.top_margin = Cm(1.15)
-sec.bottom_margin = Cm(1.05)
+sec.top_margin = Cm(1.05)
+sec.bottom_margin = Cm(0.9)
 sec.footer_distance = Cm(0.6)
 
 # ---------- 页眉 ----------
@@ -162,7 +162,7 @@ rich(p,
 section(doc, "01", "能力维度")
 
 DIMS = [
-    ("业务判断", "先判断值不值得做，再谈怎么做——用目标、成本、可验证性筛选项。方案产出 **3 天 → 3 分钟**。"),
+    ("业务判断", "先判断值不值得做，再谈怎么做——用目标、成本、可验证性筛选项。方案产出 **3 天 → 10 分钟**。"),
     ("用户洞察", "去现场看人怎么干活，而不是只看需求文档。试点 **12 位售前，10 位持续使用**。"),
     ("结构与交互", "角色、权限、数据流、本体先咬合清楚，页面才会收敛。**45 个组件规范**，入口 **3 → 1**。"),
     ("AI 与 Agent", "定义机器跑到哪一步必须停下等人确认，状态与回溯写进产品。覆盖 **近 1000 人**，满意度 **4.2**。"),
@@ -170,7 +170,7 @@ DIMS = [
     ("推动与交付", "与算法、合规、研发对齐边界与排期，在灰度里迭代。**7 所院校**部署，项目获公司优胜奖。"),
 ]
 for label, text in DIMS:
-    p = para(doc, before=1.3, after=0, line=1.3, left=2.4, hanging=2.4)
+    p = para(doc, before=0.8, after=0, line=1.28, left=2.4, hanging=2.4)
     p.paragraph_format.tab_stops.add_tab_stop(Cm(2.4))
     lb = p.add_run(label + "\t")
     set_font(lb, 7.4, color=MUTED, spacing=0.6)
@@ -185,8 +185,9 @@ JOBS = [
         "负责产品中**本体构建 Agent** 的设计，目标是降低构建门槛、提升效率，覆盖数据处理、管道构建、本体构建三个环节；构建效率提升 **90%**，并兼容结构化与非结构化数据。",
     ]),
     ("华为", "体验设计师 · Answer Agent 产品经理", "2022.04 — 2026.04", [
-        "主导「智慧办公 Answer Agent」：组建团队、定产品定位与排期，完成从需求定义、Agent 工作流到灰度落地的全流程。",
-        "负责 Talent 实训云平台的规划与落地，围绕教务、教学、考评梳理多角色任务与关键流程。",
+        "从 0 到 1 构建企业级 **Agent 解决方案助手**，覆盖方案生成、知识库管理、合规审核、时政采集与推送，支撑客户招标场景下的方案生成与优化；方案产出由 **3 天缩短到 10 分钟**，合规通过率达 **90%**。项目获公司优胜奖（3 万元），个人获「价值之星」。",
+        "在解决方案助手基础上负责企业级 AI 办公 **Answer Agent** 的产品设计，确立「Chat 是入口、垂域是能力」的产品骨架，知识源三入口收敛为一个；覆盖近 1000 人，试点满意度 4.2，沉淀 45 个组件的 Agent 设计规范。",
+        "负责 Talent 实训云平台的规划与落地，围绕教务、教学、考评梳理多角色任务与关键流程；部署 **7 所职业院校**，批阅、签到等高频模块使用率 **+13%**。",
     ]),
     ("涂鸦智能", "产品体验设计师（智慧楼宇 SaaS）", "2021.04 — 2022.04", [
         "负责 3 条产品线（设计 Owner），主导智慧楼宇实时报警系统重构；报警处理效率 **+70%**，满意度 **3.29 → 4.50**。",
@@ -198,7 +199,7 @@ JOBS = [
 ]
 
 for co, role, date, bullets in JOBS:
-    p = para(doc, before=3, after=0, line=1.15, keep_next=True)
+    p = para(doc, before=2, after=0, line=1.15, keep_next=True)
     p.paragraph_format.tab_stops.add_tab_stop(CONTENT_W, WD_TAB_ALIGNMENT.RIGHT)
     c = p.add_run(co)
     set_font(c, 10.5, serif=True, color=INK)
@@ -210,7 +211,7 @@ for co, role, date, bullets in JOBS:
     set_font(d, 7.8, color=MUTED, spacing=0.4)
 
     for b in bullets:
-        bp = para(doc, before=0.8, after=0, line=1.24, left=0.42, hanging=0.42)
+        bp = para(doc, before=0.5, after=0, line=1.2, left=0.42, hanging=0.42)
         dash = bp.add_run("–  ")
         set_font(dash, 8.6, color=MUTED)
         rich(bp, b, 8.7)
@@ -238,7 +239,7 @@ PROJECTS = [
             ("S 背景", "解决方案工程师大量重复编写方案，人工产出周期长；客户需求频繁变更，且有强合规、可溯源要求，人工模式稳定性差。"),
             ("T 任务", "作为 AI 产品负责人，负责需求定义、Agent 工作流、交互方案到灰度落地的全流程；目标是把产出周期压下来，同时守住合规底线。"),
             ("A 行动", "访谈真实用户梳理使用链路，区分适合 AI 生成与必须人工审核的环节；定义 Agent 任务拆解、记忆管理与版本回溯；与算法、合规、研发对齐输出边界并设置校验拦截；输出方案与规范，交付 Vibe Coding 的产品源码；设计灰度方案，按幻觉、准确性、使用门槛迭代交互。"),
-            ("R 结果", "方案平均产出 **3 天 → 3 分钟**；试点 **12 位售前，10 位持续使用**；生成内容全部留痕可审计；项目获公司优胜奖（3 万元），个人获「价值之星」。"),
+            ("R 结果", "方案平均产出 **3 天 → 10 分钟**，合规通过率 **90%**；试点 **12 位售前，10 位持续使用**；生成内容全部留痕可审计；项目获公司优胜奖（3 万元），个人获「价值之星」。"),
         ],
     },
     {
@@ -281,7 +282,7 @@ for i, pr in enumerate(PROJECTS, 1):
     set_font(d, 7.8, color=MUTED, spacing=0.4)
 
     for ri, (label, text) in enumerate(pr["rows"]):
-        rp = para(doc, before=0.8, after=0, line=1.24, left=1.15, hanging=1.15)
+        rp = para(doc, before=0.6, after=0, line=1.2, left=1.15, hanging=1.15)
         rp.paragraph_format.keep_together = True
         rp.paragraph_format.tab_stops.add_tab_stop(Cm(1.15))
         lb = rp.add_run(label + "\t")

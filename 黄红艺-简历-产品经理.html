@@ -88,7 +88,7 @@
   .intro--main{margin-top:2.4mm;font-size:9.5pt;color:var(--ink);line-height:1.6;}
 
   /* ================= 章节 ================= */
-  .sec{margin-top:6.4mm;}
+  .sec{margin-top:5.4mm;}
   .sec__head{
     display:flex;align-items:baseline;gap:2.6mm;
     padding-bottom:1.3mm;border-bottom:.35pt solid var(--line);
@@ -106,24 +106,24 @@
   .em{color:var(--ink);}
 
   /* 工作经历 */
-  .job{margin-top:3mm;}
+  .job{margin-top:2.2mm;}
   .job__head{display:flex;align-items:baseline;gap:2.2mm;}
   .job__co{font-family:var(--serif);font-weight:400;font-size:10.5pt;color:var(--ink);}
   .job__role{font-size:8.6pt;color:var(--muted);}
   .job__date{margin-left:auto;font-size:7.8pt;color:var(--muted);letter-spacing:.05em;}
-  .job__list{margin-top:1.1mm;}
+  .job__list{margin-top:.9mm;}
   .job__list li{position:relative;padding-left:3.6mm;}
-  .job__list li + li{margin-top:.7mm;}
+  .job__list li + li{margin-top:.5mm;}
   .job__list li::before{content:"–";position:absolute;left:0;top:0;color:var(--muted);}
 
   /* 代表项目 */
-  .proj{margin-top:3.4mm;}
+  .proj{margin-top:3mm;}
   .proj__head{display:flex;align-items:baseline;gap:2.2mm;}
   .proj__idx{font-size:7.2pt;color:var(--muted);letter-spacing:.1em;}
   .proj__name{font-family:var(--serif);font-weight:400;font-size:10.4pt;color:var(--ink);}
   .proj__meta{font-size:7.8pt;color:var(--muted);letter-spacing:.03em;}
   .proj__date{margin-left:auto;font-size:7.8pt;color:var(--muted);letter-spacing:.05em;}
-  .proj__rows{margin-top:1.2mm;display:grid;grid-template-columns:11.5mm 1fr;row-gap:1.1mm;}
+  .proj__rows{margin-top:1.1mm;display:grid;grid-template-columns:11.5mm 1fr;row-gap:.9mm;}
   .proj__rows dt{font-size:7.4pt;color:var(--muted);letter-spacing:.07em;padding-top:.4mm;}
   .proj__rows dd{font-size:8.7pt;}
 
@@ -207,7 +207,7 @@
       <h2 class="sec__head"><span class="sec__num">01</span><span class="sec__title">能力维度</span></h2>
       <dl class="dims">
         <dt>业务判断</dt>
-        <dd>先判断值不值得做，再谈怎么做——用目标、成本、可验证性筛选项。方案产出 <span class="em">3 天 → 3 分钟</span>。</dd>
+        <dd>先判断值不值得做，再谈怎么做——用目标、成本、可验证性筛选项。方案产出 <span class="em">3 天 → 10 分钟</span>。</dd>
         <dt>用户洞察</dt>
         <dd>去现场看人怎么干活，而不是只看需求文档。试点 <span class="em">12 位售前，10 位持续使用</span>。</dd>
         <dt>结构与交互</dt>
@@ -244,8 +244,9 @@
           <p class="job__date">2022.04 — 2026.04</p>
         </div>
         <ul class="job__list">
-          <li>主导「智慧办公 Answer Agent」：组建团队、定产品定位与排期，完成从需求定义、Agent 工作流到灰度落地的全流程。</li>
-          <li>负责 Talent 实训云平台的规划与落地，围绕教务、教学、考评梳理多角色任务与关键流程。</li>
+          <li>从 0 到 1 构建企业级 <span class="em">Agent 解决方案助手</span>，覆盖方案生成、知识库管理、合规审核、时政采集与推送，支撑客户招标场景下的方案生成与优化；方案产出由 <span class="em">3 天缩短到 10 分钟</span>，合规通过率达 <span class="em">90%</span>。项目获公司优胜奖（3 万元），个人获「价值之星」。</li>
+          <li>在解决方案助手基础上负责企业级 AI 办公 <span class="em">Answer Agent</span> 的产品设计，确立「Chat 是入口、垂域是能力」的产品骨架，知识源三入口收敛为一个；覆盖近 1000 人，试点满意度 4.2，沉淀 45 个组件的 Agent 设计规范。</li>
+          <li>负责 <span class="em">Talent 实训云平台</span>的规划与落地，围绕教务、教学、考评梳理多角色任务与关键流程；部署 <span class="em">7 所职业院校</span>，批阅、签到等高频模块使用率 <span class="em">+13%</span>。</li>
         </ul>
       </article>
 
@@ -273,6 +274,7 @@
       </article>
     </section>
 
+
     <!-- 03 -->
     <section class="sec">
       <h2 class="sec__head"><span class="sec__num">03</span><span class="sec__title">代表项目</span></h2>
@@ -295,11 +297,11 @@
         </dl>
       </article>
     </section>
-
   </article>
 
   <!-- ==================== 第 2 页 ==================== -->
   <article class="sheet" aria-label="简历第 2 页">
+
 
     <article class="proj" style="margin-top:0">
       <div class="proj__head">
@@ -316,7 +318,7 @@
         <dt>A 行动</dt>
         <dd>访谈真实用户梳理使用链路，区分适合 AI 生成与必须人工审核的环节；定义 Agent 任务拆解、记忆管理与版本回溯；与算法、合规、研发对齐输出边界并设置校验拦截；输出方案与规范，交付 Vibe Coding 的产品源码；设计灰度方案，按幻觉、准确性、使用门槛迭代交互。</dd>
         <dt>R 结果</dt>
-        <dd>方案平均产出 <span class="em">3 天 → 3 分钟</span>；试点 <span class="em">12 位售前，10 位持续使用</span>；生成内容全部留痕可审计；项目获公司优胜奖（3 万元），个人获「价值之星」。</dd>
+        <dd>方案平均产出 <span class="em">3 天 → 10 分钟</span>，合规通过率 <span class="em">90%</span>；试点 <span class="em">12 位售前，10 位持续使用</span>；生成内容全部留痕可审计；项目获公司优胜奖（3 万元），个人获「价值之星」。</dd>
       </dl>
     </article>
 
