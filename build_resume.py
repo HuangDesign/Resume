@@ -232,7 +232,7 @@ PROJECTS = [
         ],
     },
     {
-        "name": "华为 Answer Agent｜企业级解决方案",
+        "name": "华为 Answer 1.0 AI 助手｜企业级解决方案助手",
         "meta": "产品经理 · 0 → 1",
         "date": "2024.08 — 2024.11",
         "rows": [
