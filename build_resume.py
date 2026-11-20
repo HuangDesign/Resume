@@ -81,7 +81,7 @@ def rich(p, text, size, *, color=BODY, strong=INK, serif=False):
         set_font(r, size, serif=serif, bold=False, color=(strong if i % 2 else color))
 
 
-def section(doc, num, title, before=4):
+def section(doc, num, title, before=3):
     p = para(doc, before=before, after=5, line=1.0, keep_next=True)
     n = p.add_run(num + "  ")
     set_font(n, 7.2, color=MUTED, spacing=1.2)
@@ -170,7 +170,7 @@ DIMS = [
     ("推动与交付", "与算法、合规、研发对齐边界与排期，在灰度里迭代。**7 所院校**部署，项目获公司优胜奖。"),
 ]
 for label, text in DIMS:
-    p = para(doc, before=1.6, after=0, line=1.32, left=2.4, hanging=2.4)
+    p = para(doc, before=1.3, after=0, line=1.3, left=2.4, hanging=2.4)
     p.paragraph_format.tab_stops.add_tab_stop(Cm(2.4))
     lb = p.add_run(label + "\t")
     set_font(lb, 7.4, color=MUTED, spacing=0.6)
@@ -181,9 +181,8 @@ section(doc, "02", "工作经历")
 
 JOBS = [
     ("锐捷网络", "产品设计师（数据与 Agent 平台）", "2026.04 — 2026.10", [
-        "负责 Source ID 平台**本体、数据管道、数据管理**三大模块的体验设计，并参与 Agent 任务链路与设计规范建设。",
-        "把「数据接入—加工—建模—管理」收成一条统一路径，同时定义 Agent 过程状态、异常反馈与人工介入节点。",
-        "用 Lovable 快速产出可交互原型验证方案，把任务流程、状态表达与反馈机制沉淀成团队原则。",
+        "使用 **Lovable** 以 Vibe Coding 方式从 0 到 1 重构 Source ID 3.0 的核心模块「本体模型构建」，把「数据接入—加工—建模—管理」收成一条统一路径；产出的前端源码直接用于方案评审，方案沟通效率、评审通过率与前端开发效率同步提升。",
+        "负责产品中**本体构建 Agent** 的设计，目标是降低构建门槛、提升效率，覆盖数据处理、管道构建、本体构建三个环节；构建效率提升 **90%**，并兼容结构化与非结构化数据。",
     ]),
     ("华为", "体验设计师 · Answer Agent 产品经理", "2022.04 — 2026.04", [
         "主导「智慧办公 Answer Agent」：组建团队、定产品定位与排期，完成从需求定义、Agent 工作流到灰度落地的全流程。",
@@ -199,7 +198,7 @@ JOBS = [
 ]
 
 for co, role, date, bullets in JOBS:
-    p = para(doc, before=4, after=0, line=1.15, keep_next=True)
+    p = para(doc, before=3, after=0, line=1.15, keep_next=True)
     p.paragraph_format.tab_stops.add_tab_stop(CONTENT_W, WD_TAB_ALIGNMENT.RIGHT)
     c = p.add_run(co)
     set_font(c, 10.5, serif=True, color=INK)
@@ -211,7 +210,7 @@ for co, role, date, bullets in JOBS:
     set_font(d, 7.8, color=MUTED, spacing=0.4)
 
     for b in bullets:
-        bp = para(doc, before=1.2, after=0, line=1.27, left=0.42, hanging=0.42)
+        bp = para(doc, before=0.8, after=0, line=1.24, left=0.42, hanging=0.42)
         dash = bp.add_run("–  ")
         set_font(dash, 8.6, color=MUTED)
         rich(bp, b, 8.7)
@@ -267,7 +266,7 @@ PROJECTS = [
 ]
 
 for i, pr in enumerate(PROJECTS, 1):
-    p = para(doc, before=5.5, after=0, line=1.12, keep_next=True)
+    p = para(doc, before=5, after=0, line=1.12, keep_next=True)
     p.paragraph_format.keep_together = True
     p.paragraph_format.tab_stops.add_tab_stop(CONTENT_W, WD_TAB_ALIGNMENT.RIGHT)
     idx = p.add_run(f"{i:02d}  ")
@@ -282,7 +281,7 @@ for i, pr in enumerate(PROJECTS, 1):
     set_font(d, 7.8, color=MUTED, spacing=0.4)
 
     for ri, (label, text) in enumerate(pr["rows"]):
-        rp = para(doc, before=1.0, after=0, line=1.27, left=1.15, hanging=1.15)
+        rp = para(doc, before=0.8, after=0, line=1.24, left=1.15, hanging=1.15)
         rp.paragraph_format.keep_together = True
         rp.paragraph_format.tab_stops.add_tab_stop(Cm(1.15))
         lb = rp.add_run(label + "\t")
